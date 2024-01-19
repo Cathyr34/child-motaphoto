@@ -1,0 +1,104 @@
+/*
+Theme Name: Child Motaphoto
+Author: 
+Description: Your description goes here
+Version: 1.0
+Template: blankslate
+
+This is the child theme for BlankSlate theme, generated with Generate Child Theme plugin by catchthemes.
+
+(optional values you can add: Theme URI, Author URI, License, License URI, Tags, Text Domain)
+*/
+
+* {
+    font-family: 'Space Mono'
+}
+
+.en_tete {
+    height: 80px;
+    margin-top : 0px;
+    background-color: #FFFFFF;  
+    display: flex;
+    align-items: center; 
+    flex-direction: row;
+    justify-content: space-between;
+ }
+ 
+.en_tete ul {
+    list-style-type: none; 
+    display: flex;
+    align-items: center;
+ }
+ 
+ .en_tete ul li {
+    flex-direction: row;
+    margin: 0 40px 0 0;
+ }
+ 
+ a {
+    text-decoration: none; 
+    font-size: 16px;  
+    font-weight: 400;
+ } 
+ 
+ .logo {
+    width: 300px;
+    margin-left: 120px;
+ }
+ 
+ .menu {
+    height: 80px;
+    margin-top: 0px;
+ }
+ 
+ /* Footer */
+ .footer {
+    height: 60px;
+    margin-bottom : 0px;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center; 
+    justify-content: center;   
+ }
+ 
+  .footer ul, p {
+    height: 60px;
+    list-style-type: none;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    
+  }
+ 
+  .footer ul li, p {
+    margin: 0 20px 0 20px;
+  }
+
+  li.menu-item a {
+    color: black;
+  }
+  
+ /*bannière*/
+  .banner {
+   position: relative;
+   background-image: url("/Motaphoto/wp-content/themes/child-motaphoto/images/nathalie-9.jpeg");
+   min-height: 100vh;
+   width: 100%;
+   height: auto;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: 100% auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .banner p {
+   font-family: 'Space Mono', monospace;
+   font-weight: 700;
+   font-style: italic;
+   font-size: 96px;
+   color: transparent;
+    -webkit-text-stroke: 2px white; /* contour de 2px blanc */
+    
+}
