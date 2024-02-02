@@ -2,12 +2,10 @@
 <html <?php language_attributes(); ?> <?php blankslate_schema_type(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="wrapper" class="hfeed">
+
 
 <header class="en_tete">
 
@@ -15,13 +13,24 @@
 
 <?php
 wp_nav_menu([
+ 'menu_id'  =>  'mesliens',
 'theme_location' => 'header',
 'container' => false,
 'menu_class' => 'navbar-nav mr-auto'
 ])?>
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">CONTACT</button>
 
+<button class="responsive-menu" id="site-navigation_hamburger_icon" onclick="showResponsiveMenu()">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+            <div id="mesliens" class="responsive-menu"> 
+</div>      
 </header>
-<div id="container">
-<main id="content" role="main">
+
+<main id="container" class="entry-content">
+
 
         

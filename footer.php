@@ -1,6 +1,6 @@
 </main>
 
-</div>
+
 <footer id="footer" role="contentinfo" class="footer">
 
 <?php
@@ -13,7 +13,11 @@
      <p>TOUS DROITS RESERVES</p>
 
 </footer>
-</div>
+
+<?php include 'modale.php'; ?>
 <?php wp_footer(); ?>
+
+
+
 </body>
 </html>

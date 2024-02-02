@@ -14,7 +14,9 @@ This is the child theme for BlankSlate theme, generated with Generate Child Them
     font-family: 'Space Mono'
 }
 
+ /* header */
 .en_tete {
+  position: relative;
     height: 80px;
     margin-top : 0px;
     background-color: #FFFFFF;  
@@ -23,7 +25,11 @@ This is the child theme for BlankSlate theme, generated with Generate Child Them
     flex-direction: row;
     justify-content: space-between;
  }
- 
+
+.header {
+display: none;
+ }
+
 .en_tete ul {
     list-style-type: none; 
     display: flex;
@@ -46,6 +52,13 @@ This is the child theme for BlankSlate theme, generated with Generate Child Them
     margin-left: 120px;
  }
  
+ .en_tete {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  
+}
+
  .menu {
     height: 80px;
     margin-top: 0px;
@@ -81,7 +94,7 @@ This is the child theme for BlankSlate theme, generated with Generate Child Them
  /*bannière*/
   .banner {
    position: relative;
-   background-image: url("/Motaphoto/wp-content/themes/child-motaphoto/images/nathalie-9.jpeg");
+   background-image: url("http://localhost:8080/Motaphoto/wp-content/themes/child-motaphoto/images/nathalie-9.jpeg");
    min-height: 100vh;
    width: 100%;
    height: auto;
@@ -102,3 +115,260 @@ This is the child theme for BlankSlate theme, generated with Generate Child Them
     -webkit-text-stroke: 2px white; /* contour de 2px blanc */
     
 }
+
+/* Formulaire contact */
+
+.wpcf7-form {
+  width: 600px; 
+  min-height: 400px;
+  background-color: #FFFFFF;
+  margin: 0 auto; /* Centrer le formulaire sur la page */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.label {
+  width: 260px;
+  font-size: 20px;
+  line-height: 2em;
+  color: #000000;
+  margin: 40px;   
+}
+
+h3 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #000000;  
+}
+
+.wpcf7-text, .wpcf7-textarea {
+  display: flex;
+  flex-direction: column;        
+  border-color: #acacac;   
+  background: white;         
+  font-size: 16px;             
+  color: #000000;               
+  height: 30px; 
+} 
+
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 textarea {
+  border-radius: 8px;
+  width: 260px;
+}
+
+.wpcf7-submit {
+  width: 260px; 
+  height: 50px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  background: #acacac;
+  color: #000000;
+  border: none;
+}
+
+.wpcf7 input[type="submit"] {
+  border-radius: 3px;
+  position: absolute;
+}
+
+/* Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  width: 600px; 
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Menu */
+.responsive-menu{
+   display: none;
+} 
+
+.navbar-nav {
+  display: block;
+}
+
+@media (max-width: 1024px) 
+{
+   
+ .logo {
+  width: 250px;
+  margin-left: 100px;
+}
+
+  .banner p {
+    font-size: 70px;
+    color: transparent;
+     -webkit-text-stroke: 1px white; /* contour de 1px blanc */
+     
+ }
+
+  .responsive-menu{
+    display: block;
+    width: 100%;
+    height: 10%;
+ } 
+
+ 
+.navbar-nav {
+  display: none;
+}
+
+/*menu*/
+#mesliens {
+  position: relative;
+  display: flex;
+  transition: opacity 3s;
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+  top: 45px;
+  left: 0;
+}
+
+#mesliens.open {
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background-color: #E00000;
+}
+
+#mesliens.open ul {
+  position: absolute;
+  display: block;
+  justify-content: center;
+  width: 100%;
+  top: 30%;
+}
+
+#mesliens.open a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+#mesliens.open a:hover {
+  color: #FFFFFF;
+}
+
+#site-navigation_hamburger_icon {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 28px;
+  height: 28px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+#site-navigation_hamburger_icon span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  margin-bottom: 5px;
+  background: #171717;
+  border-radius: 3px;
+  z-index: 100;
+  opacity: 1;
+  left: 0;
+  transition: 0.25s ease-in-out;
+}
+
+#site-navigation_hamburger_icon span:nth-child(1) {
+  top: 0px;
+  transform-origin: left top;
+}
+
+#site-navigation_hamburger_icon span:nth-child(2) {
+  top: 12px;
+  transform-origin: left center;
+}
+
+#site-navigation_hamburger_icon span:nth-child(3) {
+  top: 24px;
+  transform-origin: left bottom;
+}
+
+#site-navigation_hamburger_icon.open span:nth-child(1) {
+  width: 110%;
+  transform: rotate(45deg) translate(0, -1px);
+}
+
+#site-navigation_hamburger_icon.open span:nth-child(2) {
+  width: 0;
+  opacity: 0;
+}
+
+#site-navigation_hamburger_icon.open span:nth-child(3) {
+  width: 110%;
+  transform: rotate(-45deg) translate(0, 1px);
+}
+}
+
+@media (max-width: 767px) 
+{
+ 
+  .logo {
+    width: 200px;
+    margin-left: 70px;
+ }
+ 
+ .banner {
+    min-height: 40vh;
+    }
+
+  .banner p {
+    font-size: 32px;
+    color: transparent;
+     -webkit-text-stroke: 1px white; /* contour de 1px blanc */
+    }  
+
+    .wpcf7-form {
+      width: 350px; 
+      min-height: 400px;
+      background-color: #FFFFFF;
+      margin: 0 auto; /* Centrer le formulaire sur la page */
+      box-sizing: border-box;
+      overflow: hidden;
+      border: 2px solid black;
+    }
+
+    h3 {
+      font-size: 30px;
+      font-weight: 300;
+      color: #000000;  
+    }
+    
+ }
+
