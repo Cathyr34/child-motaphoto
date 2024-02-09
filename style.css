@@ -23,17 +23,31 @@ This is the child theme for BlankSlate theme, generated with Generate Child Them
     display: flex;
     align-items: center; 
     flex-direction: row;
-    justify-content: space-between;
  }
 
 .header {
 display: none;
  }
 
+#mesliens {
+  position: absolute;
+  right: 170px;
+}
+
+button#myBtn {
+  position: absolute;
+  right: 80px;
+  background-color: #FFFFFF;
+  border: none;
+  font-size: 16px;  
+  font-weight: 400;
+}
+
 .en_tete ul {
     list-style-type: none; 
     display: flex;
     align-items: center;
+    
  }
  
  .en_tete ul li {
@@ -49,14 +63,13 @@ display: none;
  
  .logo {
     width: 300px;
-    margin-left: 120px;
+    margin-left: 60px;
  }
  
  .en_tete {
   position: sticky;
   top: 0;
   z-index: 9999;
-  
 }
 
  .menu {
@@ -114,6 +127,79 @@ display: none;
    color: transparent;
     -webkit-text-stroke: 2px white; /* contour de 2px blanc */
     
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.text {
+  width: 50%;
+  margin-top: 30vh;
+}
+
+.container img {
+  max-width: 50%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: cover; 
+}
+
+.majuscule {
+  /* Styles pour le titre */
+  text-transform: uppercase;
+  margin-left: 80px;
+  font-size: 2em;
+  margin-bottom: 50px;
+}
+
+.renseignements {
+  /* Styles pour les paragraphes */
+  justify-content: left;
+  font-size: 1em;
+  margin-left: 80px;
+}
+
+.contacter {
+  width: 100%;
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  line-height: 118px;
+  font-size: 16px;
+  margin-left: 80px;
+}
+
+.aussi {
+  width: 100%;
+  align-items: center;
+  line-height: 80px;
+  font-size: 16px;
+  margin-left: 80px;
+}
+
+content.img {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+
+.img {
+  width: 600px;
+  height: 600px;
+  object-fit: cover; 
 }
 
 /* Formulaire contact */
@@ -219,7 +305,15 @@ h3 {
 
 @media (max-width: 1024px) 
 {
-   
+ 
+  #mesliens {
+    display: none;
+  }
+  
+  button#myBtn {
+    display: none;
+  }
+
  .logo {
   width: 250px;
   margin-left: 100px;
@@ -234,19 +328,15 @@ h3 {
 
   .responsive-menu{
     display: block;
-    width: 100%;
-    height: 10%;
+    
  } 
-
- 
-.navbar-nav {
-  display: none;
-}
 
 /*menu*/
 #mesliens {
   position: relative;
   display: flex;
+  justify-content: center;
+  align-items: center;
   transition: opacity 3s;
   height: 0;
   width: 100%;
@@ -256,25 +346,31 @@ h3 {
 }
 
 #mesliens.open {
+  position: fixed; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: space-between; 
   opacity: 1;
   width: 100%;
-  height: 100%;
-  min-height: 100vh;
+  height: 100vh;
   background-color: #E00000;
+  z-index: 2;
+  top: 0; 
+  left: 0 !important; 
 }
 
 #mesliens.open ul {
-  position: absolute;
-  display: block;
-  justify-content: center;
-  width: 100%;
-  top: 30%;
+  position: relative; 
+ 
+  width: 100% !important; /* Ajoutez cette ligne pour que la liste prenne toute la largeur */
 }
 
 #mesliens.open a {
   color: #FFFFFF;
   text-decoration: none;
   font-size: 30px;
+  text-align: center;
 }
 
 #mesliens.open a:hover {
@@ -285,8 +381,8 @@ h3 {
   position: absolute;
   right: 20px;
   top: 20px;
-  width: 28px;
-  height: 28px;
+  width: 25px;
+  height: 25px;
   z-index: 100;
   cursor: pointer;
 }
@@ -294,9 +390,9 @@ h3 {
 #site-navigation_hamburger_icon span {
   display: block;
   position: absolute;
-  height: 4px;
+  height: 3px;
   width: 100%;
-  margin-bottom: 5px;
+  
   background: #171717;
   border-radius: 3px;
   z-index: 100;
@@ -311,17 +407,17 @@ h3 {
 }
 
 #site-navigation_hamburger_icon span:nth-child(2) {
-  top: 12px;
+  top: 10px;
   transform-origin: left center;
 }
 
 #site-navigation_hamburger_icon span:nth-child(3) {
-  top: 24px;
+  top: 20px;
   transform-origin: left bottom;
 }
 
 #site-navigation_hamburger_icon.open span:nth-child(1) {
-  width: 110%;
+  width: 136%;
   transform: rotate(45deg) translate(0, -1px);
 }
 
@@ -331,7 +427,7 @@ h3 {
 }
 
 #site-navigation_hamburger_icon.open span:nth-child(3) {
-  width: 110%;
+  width: 136%;
   transform: rotate(-45deg) translate(0, 1px);
 }
 }
