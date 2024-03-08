@@ -30,13 +30,13 @@ display: none;
  }
 
 #mesliens {
+  display: flex;
+  align-items: center; 
   position: absolute;
-  right: 170px;
+  right: 120px;
 }
 
-button#myBtn {
-  position: absolute;
-  right: 80px;
+#mesliens button#myBtn {
   background-color: #FFFFFF;
   border: none;
   font-size: 16px;  
@@ -125,81 +125,224 @@ button#myBtn {
    font-style: italic;
    font-size: 96px;
    color: transparent;
-    -webkit-text-stroke: 2px white; /* contour de 2px blanc */
+   -webkit-text-stroke: 2px white; /* contour de 2px blanc */
     
 }
 
-.container {
-  max-width: 1000px;
-  margin: auto;
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
+.selecteur {
+  font-size: 1em;
+  padding: 10px;
+  padding-right: 80px;
+  line-height: 40px;
+}
+
+.trier {
+  display: flex; 
+  width: 90%;
+  justify-content: space-between;
+  height: 50px;
   align-items: center;
 }
 
-.content {
+.lesphotos {
+  width: 90%;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
-  width: 100%;
+  margin:auto;
+}
+
+.lesphotos img {
+  width: 80vh;
+  height: 80vh;
+  object-fit: cover;
+  margin : 1%;
+  }
+
+ 
+.content {
+  width: 90%;
+  margin: auto;
+  border: solid 2px black;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .text {
-  width: 50%;
-  margin-top: 30vh;
+  width: 48%;
 }
 
-.container img {
-  max-width: 50%;
+.content img {
+  margin-top: 30px;
+  width: 48%;
   height: auto;
-  max-height: 80vh;
-  object-fit: cover; 
+  object-fit: contain; 
 }
 
 .majuscule {
   /* Styles pour le titre */
   text-transform: uppercase;
-  margin-left: 80px;
-  font-size: 2em;
-  margin-bottom: 50px;
+  font-size: 1.8em;
+  padding-bottom: 50px;
+  margin-left: 2%;
+  padding-top: 70%;
 }
 
 .renseignements {
   /* Styles pour les paragraphes */
-  justify-content: left;
+  left: 2%;
   font-size: 1em;
-  margin-left: 80px;
+  color: #000;
+  justify-content: left;
+  margin-bottom: 2%;
+}
+
+.renseignements a {
+  color: black;
 }
 
 .contacter {
-  width: 100%;
+  width: 45%;
   display: flex;
   flex-direction:row;
+  justify-content: space-between;
   align-items: center;
-  line-height: 118px;
+  height: 118px;
   font-size: 16px;
-  margin-left: 80px;
+  left: 2%;
+  border-top: solid 2px #D8D8D8;
+  margin-right: 49%;
+}
+
+hr {
+  width: 90%;
+  border-bottom: solid 2px #D8D8D8;
 }
 
 .aussi {
-  width: 100%;
+  width: 90%;
   align-items: center;
   line-height: 80px;
   font-size: 16px;
   margin-left: 80px;
 }
 
-content.img {
+#plus{
   display: flex;
-  flex-direction: row;
-  margin: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 
-.img {
-  width: 600px;
-  height: 600px;
-  object-fit: cover; 
+.plus {
+  border-radius: 2px;
+  border: none;
+  width: 160px;
+  height: 40px;
+  background-color: #D8D8D8;
+}
+
+.plus:hover {
+  background-color: #000000;
+  color: #FFFFFF; 
+}
+
+.plus a {
+  color: #FFFFFF;
+
+}
+
+.image {
+  position: relative;
+  width: 44%;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.image:hover .overlay {
+  height: 100%;
+}
+
+.icon {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.fa-eye {
+  
+  padding-right: 20px;
+  transform: translate(-30%, -50%);
+}
+
+.fa-expand {
+  
+  padding-left: 20px;
+  transform: translate(30%, -50%);
+}
+
+.fa-eye:before {
+  content: '\f06e';
+}
+
+.fa-expand:before {
+  content: '\f065';
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 70vh; 
+  height: 70vh; 
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+}
+
+.close {
+  color: rgb(255, 255, 255);
+  position: sticky;
+  z-index: 999;
+  margin: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* Formulaire contact */
@@ -305,12 +448,19 @@ h3 {
 
 @media (max-width: 1024px) 
 {
- 
-  #mesliens {
-    display: none;
-  }
+  /* header */
+  .en_tete {
+    width: 100%;
+    position: relative;
+    height: 60px;
+    margin-top : 0px;
+    background-color: #FFFFFF;  
+    display: flex;
+    align-items: center; 
+    flex-direction: row;
+   }
   
-  button#myBtn {
+  #mesliens {
     display: none;
   }
 
@@ -322,55 +472,82 @@ h3 {
   .banner p {
     font-size: 70px;
     color: transparent;
-     -webkit-text-stroke: 1px white; /* contour de 1px blanc */
+    -webkit-text-stroke: 1px white; /* contour de 1px blanc */
      
  }
 
+ .lesphotos img {
+  width: 48vh;
+  height: 48vh;
+  object-fit: cover;
+  margin : 1%;
+  }
+
+
+  .lightbox {
+    padding-top: 40px;
+    width: 48vh; 
+    height: 48vh; 
+  }
+  
   .responsive-menu{
     display: block;
-    
  } 
 
 /*menu*/
 #mesliens {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: space-between;
   transition: opacity 3s;
   height: 0;
   width: 100%;
   overflow: hidden;
-  top: 45px;
+  top: 60px;
   left: 0;
 }
 
 #mesliens.open {
+  top: 60px;
   position: fixed; 
-  display: flex;
-  flex-direction: column;
-  justify-content: center; 
-  align-items: space-between; 
   opacity: 1;
   width: 100%;
   height: 100vh;
   background-color: #E00000;
-  z-index: 2;
-  top: 0; 
+  z-index: 2; 
   left: 0 !important; 
 }
 
+.en_tete ul li {
+  margin: 0;
+  margin-bottom: 40px;
+}
+
 #mesliens.open ul {
-  position: relative; 
- 
-  width: 100% !important; /* Ajoutez cette ligne pour que la liste prenne toute la largeur */
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 80%;
+  transition: opacity 3s;
+}
+#mesliens.open button#myBtn {
+  position: absolute;
+  background-color: #E00000;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 30px;
+  top: 60%;
 }
 
 #mesliens.open a {
   color: #FFFFFF;
   text-decoration: none;
   font-size: 30px;
-  text-align: center;
+  
 }
 
 #mesliens.open a:hover {
@@ -380,7 +557,7 @@ h3 {
 #site-navigation_hamburger_icon {
   position: absolute;
   right: 20px;
-  top: 20px;
+  top: 10px;
   width: 25px;
   height: 25px;
   z-index: 100;
@@ -432,12 +609,23 @@ h3 {
 }
 }
 
+.selecteur {
+  font-size: 0.7em;
+  padding: 5px;
+  padding-right: 40px;
+  line-height: 30px;
+}
+
 @media (max-width: 767px) 
 {
  
+  .en_tete {
+    width: 100%;
+  }
+
   .logo {
     width: 200px;
-    margin-left: 70px;
+    margin-left: 40px;
  }
  
  .banner {
@@ -447,24 +635,83 @@ h3 {
   .banner p {
     font-size: 32px;
     color: transparent;
-     -webkit-text-stroke: 1px white; /* contour de 1px blanc */
-    }  
+    -webkit-text-stroke: 1px white; /* contour de 1px blanc */
+  }  
 
-    .wpcf7-form {
-      width: 350px; 
-      min-height: 400px;
-      background-color: #FFFFFF;
-      margin: 0 auto; /* Centrer le formulaire sur la page */
-      box-sizing: border-box;
-      overflow: hidden;
-      border: 2px solid black;
-    }
+  .content {
+    width: 90%;
+    margin: auto;
+    border: solid 1px black;
+    display: flex;
+     justify-content: center;
+    flex-direction: column;
+  }
 
-    h3 {
-      font-size: 30px;
-      font-weight: 300;
-      color: #000000;  
-    }
-    
- }
+  
+.lesphotos {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.lesphotos img {
+  width: 90vh;
+  height: 90vh;
+  object-fit: cover;
+  }
+
+
+.text {
+  width: 90%;
+}
+
+.content img {
+  margin-top: 30px;
+  width: 90%;
+  height: auto;
+  object-fit: contain; 
+}
+
+  .wpcf7-form {
+    width: 350px; 
+    min-height: 400px;
+    background-color: #FFFFFF;
+    margin: 0 auto; /* Centrer le formulaire sur la page */
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 2px solid black;
+   }
+
+  h3 {
+    font-size: 30px;
+    font-weight: 300;
+    color: #000000;  
+  }
+   
+ /* Footer */
+ .footer {
+  height: 100px;
+  margin-bottom : 0px;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   
+}
+
+.footer ul, p {
+  height: 60px;
+  list-style-type: none;
+  display: flex; 
+  flex-direction: column;
+  justify-content: center; 
+  
+}
+
+.footer ul li, p {
+  margin: 10px 0 10px 0;
+}
+ 
+}
 
